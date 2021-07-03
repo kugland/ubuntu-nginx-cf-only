@@ -1,0 +1,10 @@
+[Unit]
+Description=Update UFW with CloudFlare servers (timer)
+Requires=update-cf-ips.service
+
+[Timer]
+Unit=update-cf-ips.service
+OnCalendar=*-*-* 04:00:00
+
+[Install]
+WantedBy=timers.target

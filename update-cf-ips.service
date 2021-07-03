@@ -1,0 +1,10 @@
+[Unit]
+Description=Update UFW with CloudFlare servers (service)
+Wants=update-cf-ips.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/update-cf-ips.sh
+
+[Install]
+WantedBy=multi-user.target
